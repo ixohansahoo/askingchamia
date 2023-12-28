@@ -1,0 +1,158 @@
+@mixin vertical-align {
+    position: relative;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background: #ff1ee1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+
+    border-radius: 50px;
+}
+
+h1 {
+    color: #ff1ee1;
+    font-size: 36px;
+    font-weight: normal;
+    text-align: center;
+
+}
+
+.wrapper {
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+    height: 100vh;
+    padding-top: 12px;
+    position: relative;
+
+    @media (min-width: 600px) {
+        padding-top: 24px;
+    }
+}
+
+.btn-wrap {
+    display: block;
+    margin: 2em auto;
+    transition: all 0.75s ease;
+    position: relative;
+    height: 100px;
+    width: 100px;
+
+
+    @media (min-width: 600px) {
+        left: 25%;
+        margin: auto;
+        margin-top: -50px;
+        position: absolute;
+        top: 50%;
+    }
+}
+
+.tricky {
+    left: 60%;
+    z-index: 50;
+
+    &:after {
+        background-color: #ff1ee1;
+        border-bottom-color: #ff1ee1
+    }
+
+    .btn {
+        color: #fff;
+        background: #ff1ee1;
+        border-bottom: 5px solid #ff1ee1;
+
+        &:hover {
+            border-bottom: 3px solid #ff1ee1;
+        }
+
+        span {
+
+            &:before {
+                content: 'No';
+            }
+        }
+    }
+
+    &.active {
+        height: 50px;
+        width: 50px;
+
+        span {
+            font-size: 14px;
+
+            &:before {
+                content: 'No';
+            }
+        }
+
+    }
+}
+
+.btn {
+    background: #ff1ee1;
+    border-radius: 20px;
+    border-bottom: 5px solid #ff1ee1;
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+    height: 40%;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.1s ease;
+    width: 170%;
+    z-index: 10;
+    top: 255%;
+    cursor: pointer;
+
+    &:hover {
+
+        scale: 1.2;
+        margin-top: 2px;
+    }
+
+    span {
+        font-size: 21px;
+        line-height: 1;
+
+        text-transform: uppercase;
+        transition: all 0.25s ease;
+        color: #ffffff ;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    /* Adjust margin as needed */
+}
+
+.btn-wrap.tricky img {
+    /* Set height and width for the 'no.gif' image */
+    height: 100px;
+    /* Adjust to your desired height */
+    width: 150px;
+    /* Adjust to your desired width */
+}
